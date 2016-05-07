@@ -10,7 +10,7 @@ node {
   sh "npm test"
 
   stage 'Build'
-  sh "mkdir dist"
+  sh "mkdir dist -p"
   sh "cp package.json dist && cd dist && tar cvzf my-ci-project_current.tar.gz *"
   step([$class: 'ArtifactArchiver', artifacts: 'dist/*.tar.gz', fingerprint: true])
 }
