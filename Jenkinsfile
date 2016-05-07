@@ -2,12 +2,15 @@ node {
   stage 'Checkout Repository'
   git url: 'https://github.com/stackroute/sample-ci-project.git', branch: 'integration'
 
-  stage 'Prune Dependencies'
+  stage 'Installing Dependencies'
   sh "npm prune"
-
-  stage 'Install Dependencies'
   sh "npm install"
 
-  stage 'Test'
+  stage 'Testing'
   sh "npm test"
+
+  stage 'Build'
+  sh "mkdir dist"
+  sh "cp package.json dist && cd dist && tar cvzf my-ci-project_current.tar.gz"
+  step([$class: 'ArtifactArchiver', artifacts: 'dist/*.tar.gz', fingerprint: true])
 }
