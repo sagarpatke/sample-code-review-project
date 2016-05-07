@@ -3,7 +3,7 @@ node {
   git url: 'https://github.com/stackroute/sample-ci-project.git', branch: 'integration'
 
   stage 'Prune Dependencies'
-  git "npm prune"
+  sh "npm prune"
 
   stage 'Install Dependencies'
   sh "npm install"
