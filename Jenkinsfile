@@ -1,7 +1,10 @@
 node {
-   stage 'Install Dependencies'
-   sh "npm install"
+  stage 'Checkout Repository'
+  git url: 'git@github.com:stackroute/sample-ci-project.git'
 
-   stage 'Test'
-   sh "node_modules/.bin/mocha"
+  stage 'Install Dependencies'
+  sh "npm install"
+
+  stage 'Test'
+  sh "node_modules/.bin/mocha"
 }
