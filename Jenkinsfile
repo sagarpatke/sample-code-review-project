@@ -11,6 +11,6 @@ node {
 
   stage 'Build'
   sh "mkdir dist"
-  sh "cp package.json dist && cd dist && tar cvzf my-ci-project_current.tar.gz"
+  sh "cp package.json dist && cd dist && tar cvzf my-ci-project_current.tar.gz *"
   step([$class: 'ArtifactArchiver', artifacts: 'dist/*.tar.gz', fingerprint: true])
 }
