@@ -1,4 +1,7 @@
 node {
+  stage: 'Clean'
+  sh "rm dist -rf"
+
   stage 'Checkout Repository'
   git url: 'https://github.com/stackroute/sample-ci-project.git', branch: "${env.BRANCH_NAME}"
 
