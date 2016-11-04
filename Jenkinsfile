@@ -1,6 +1,7 @@
 node {
   stage 'Checkout Repository'
-  git url: 'https://github.com/stackroute/sample-ci-project.git'
+  sh "env"
+  git url: 'https://github.com/stackroute/sample-ci-project.git', branch: 'integration'
 
   stage 'Installing Dependencies'
   sh "npm prune"
