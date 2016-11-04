@@ -1,17 +1,25 @@
 {
-  "name": "my-ci-project",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "code-quality-boilerplate",
+  "version": "0.1.0",
+  "description": "Boilerplate for Code Quality Control",
   "scripts": {
-    "test": "node_modules/.bin/mocha"
+    "test": "node node_modules/mocha/bin/mocha",
+    "lint": "node node_modules/gulp/bin/gulp.js lint"
   },
+  "keywords": [
+    "Code",
+    "Quality",
+    "Boilerplate"
+  ],
   "author": "Sagar Patke <sagarpatke@gmail.com>",
-  "license": "ISC",
-  "dependencies": {
-    "mocha": "^2.4.5"
-  },
+  "license": "MIT",
   "devDependencies": {
-    "should": "^8.3.1"
+    "babel-eslint": "^7.1.0",
+    "eslint-plugin-react": "^6.5.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-htmlhint": "^0.3.1",
+    "mocha": "^3.1.2",
+    "should": "^11.1.1"
   }
 }
