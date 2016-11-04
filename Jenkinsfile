@@ -1,4 +1,7 @@
 node {
+  stage: 'Environment Variables'
+  sh "env"
+
   stage: 'Clean'
   sh "rm dist -rf"
 
@@ -9,7 +12,7 @@ node {
   sh "npm prune"
   sh "npm install"
 
-  stage 'Building'
+  stage 'Linting'
   sh "npm run lint"
 
   stage 'Testing'
