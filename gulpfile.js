@@ -14,6 +14,8 @@ gulp.task('eslint', function() {
 
 gulp.task('htmlhint', function() {
   return gulp.src(['**/*.html','!node_modules/**/*'])
-  .pipe(htmlhint({htmlhintrc: ".htmlhintrc"}))
-  .pipe(htmlhint.failReporter());
+  .pipe(htmlhint({htmlhintrc:
+  		".htmlhintrc"}))
+  .pipe(htmlhint.
+  	failReporter());
 });
