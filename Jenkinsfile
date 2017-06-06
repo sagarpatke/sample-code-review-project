@@ -12,9 +12,6 @@ node {
   sh "npm prune"
   sh "npm install"
 
-  stage 'Linting'
-  sh "npm run lint"
-
   stage 'Testing'
   sh "npm test"
 
