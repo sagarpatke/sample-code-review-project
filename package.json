@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "description": "Boilerplate for Code Quality Control",
   "scripts": {
-    "test": "node node_modules/mocha/bin/mocha",
-    "lint": "node node_modules/gulp/bin/gulp.js lint"
+    "test": "node node_modules/mocha/bin/mocha && node_modules/gulp/bin/gulp.js lint"
   },
   "keywords": [
     "Code",
